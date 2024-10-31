@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MySchool.Api.Data.Models;
 using MySchool.Api.Services.Departments;
 
@@ -18,6 +19,7 @@ namespace MySchool.Api.Host.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Api.ReadOnly, Api.ReadWrite")]
         public async Task<IActionResult> Get()
         {
             IEnumerable<Department> departments = await _departmentService.GetAllDepartments();
@@ -25,6 +27,7 @@ namespace MySchool.Api.Host.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "Api.ReadOnly, Api.ReadWrite")]
         public async Task<IActionResult> Get(Guid id)
         {
             Department? department = await _departmentService.GetDepartment(id);
@@ -36,6 +39,7 @@ namespace MySchool.Api.Host.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Api.ReadWrite")]
         public async Task<IActionResult> Post([FromBody] Department department)
         {
             Department? newDepartment = await _departmentService.CreateDepartment(department);
@@ -47,6 +51,7 @@ namespace MySchool.Api.Host.Controllers
         }
 
         [HttpPut()]
+        [Authorize(Roles = "Api.ReadWrite")]
         public async Task<IActionResult> Put([FromBody] Department department)
         {
             Department? newDepartment = await _departmentService.UpdateDepartment(department);
@@ -58,6 +63,7 @@ namespace MySchool.Api.Host.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Api.ReadWrite")]
         public async Task<IActionResult> Delete(Guid id)
         {
             Department? department = await _departmentService.DeleteDepartment(id);
