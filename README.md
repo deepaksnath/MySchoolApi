@@ -14,3 +14,6 @@ Report Generator<br />
 **TEST COVERAGE REPORT GENERATE COMMANDS**<br />
 dotnet test --collect:"XPlat Code Coverage" --settings .runsettings<br />
 reportgenerator -reports:"./**/**/**/*cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html<br />
+
+**REFERENCES**<br />
+Setup SQL Server from Docker image : https://medium.com/@analyticscodeexplained/running-microsoft-sql-server-in-docker-a8dfdd246e45
