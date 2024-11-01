@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MySchool.Api.Data.Models;
-using System.Runtime.CompilerServices;
 
 namespace MySchool.Api.Data
 {
