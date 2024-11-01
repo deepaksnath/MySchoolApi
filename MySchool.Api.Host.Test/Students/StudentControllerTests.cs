@@ -9,7 +9,6 @@ namespace MySchool.Api.Host.Test.Students
 {
     public class StudentControllerTests
     {
-
         private Mock<IStudentService> _studentService;
         private Mock<ILogger<StudentController>> _logger;
         [SetUp]
@@ -20,7 +19,7 @@ namespace MySchool.Api.Host.Test.Students
         }
 
         [Test]
-        public void Get()
+        public void Test_Get_Success()
         {
             //Arrange
             Student? student = new()
