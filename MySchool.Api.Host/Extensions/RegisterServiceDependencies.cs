@@ -18,8 +18,14 @@ namespace MySchool.Api.Host.Extensions
             var config = new ConfigurationBuilder()
                     .AddJsonFile("appsettings.json", optional: false)
                     .Build();
+            var CONNECTION_STRING = config.GetConnectionString("MySchoolDbConnection");
+            var DB_HOST = Environment.GetEnvironmentVariable("DB_HOST");
+            var DB_NAME = Environment.GetEnvironmentVariable("DB_NAME");
+            var DB_SA_PASSWORD = Environment.GetEnvironmentVariable("DB_SA_PASSWORD");
+            CONNECTION_STRING = string.Format(CONNECTION_STRING, DB_HOST, DB_NAME, DB_SA_PASSWORD);
+
             builder.Services.AddDbContextPool<SchoolDbContext>(
-                options => options.UseSqlServer(config.GetConnectionString("MySchoolDbConnection")));
+                options => options.UseSqlServer(CONNECTION_STRING));
 
             //Global Exception Handling
             builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
@@ -38,6 +44,8 @@ namespace MySchool.Api.Host.Extensions
             //Azure AD Auth
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                             .AddMicrosoftIdentityWebApi(builder.Configuration);
+            //CORS
+            builder.Services.AddCors();
 
             //App Services
             builder.Services.AddTransient<IDepartmentRepository, DepartmentRepository>();

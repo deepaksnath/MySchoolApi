@@ -15,9 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{25646285-D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySchool.Api.Host.Test", "MySchool.Api.Host.Test\MySchool.Api.Host.Test.csproj", "{BF2389EA-BD4D-44EC-BC48-3F6CD46A16CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySchool.Api.Services.Test", "MySchool.Api.Services.Test\MySchool.Api.Services.Test.csproj", "{C0FA5147-079A-4323-970E-CDCBE3AD728D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySchool.Api.Services.Test", "MySchool.Api.Services.Test\MySchool.Api.Services.Test.csproj", "{C0FA5147-079A-4323-970E-CDCBE3AD728D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySchool.Api.Data.Test", "MySchool.Api.Data.Test\MySchool.Api.Data.Test.csproj", "{3063C996-9BF9-484D-9E51-19B19FABBA37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySchool.Api.Data.Test", "MySchool.Api.Data.Test\MySchool.Api.Data.Test.csproj", "{3063C996-9BF9-484D-9E51-19B19FABBA37}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{53A4C5A1-A29B-4363-B500-F33E70B5FF5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{3063C996-9BF9-484D-9E51-19B19FABBA37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3063C996-9BF9-484D-9E51-19B19FABBA37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3063C996-9BF9-484D-9E51-19B19FABBA37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53A4C5A1-A29B-4363-B500-F33E70B5FF5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53A4C5A1-A29B-4363-B500-F33E70B5FF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53A4C5A1-A29B-4363-B500-F33E70B5FF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53A4C5A1-A29B-4363-B500-F33E70B5FF5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

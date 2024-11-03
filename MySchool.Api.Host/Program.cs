@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using MySchool.Api.Data;
 using MySchool.Api.Host.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,7 +22,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseExceptionHandler();
-
+using(var Scope = app.Services.CreateScope())
+{
+    var context = Scope.ServiceProvider.GetRequiredService<SchoolDbContext>();
+    context.Database.Migrate();
+}
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
