@@ -12,7 +12,7 @@ Report Generator<br />
 
 
 **TEST COVERAGE REPORT GENERATE COMMANDS**<br />
-dotnet test --collect:"XPlat Code Coverage" --settings .runsettings<br />
+dotnet test MySchool.Api.sln --collect:"XPlat Code Coverage" --settings .runsettings<br />
 reportgenerator -reports:"./**/**/**/*cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html<br />
 
 **REFERENCES**<br />
